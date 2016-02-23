@@ -1,0 +1,6 @@
+C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Crud\bin\Debug\Crud.exe
+C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Crud\bin\Debug\Crud.pdb
+C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Crud\obj\x86\Debug\Crud.Properties.Resources.resources
+C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Crud\obj\x86\Debug\Crud.csproj.GenerateResource.Cache
+C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Crud\obj\x86\Debug\Crud.exe
+C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Crud\obj\x86\Debug\Crud.pdb

@@ -1,0 +1,11 @@
+C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Lv02_Interfaces\bin\Debug\Lv02_Interfaces.dll
+C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Lv02_Interfaces\bin\Debug\Lv02_Interfaces.pdb
+C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Lv02_Interfaces\bin\Debug\Lv02_Common.dll
+C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Lv02_Interfaces\bin\Debug\Lv02_EntityBase.dll
+C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Lv02_Interfaces\bin\Debug\Newtonsoft.Json.dll
+C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Lv02_Interfaces\bin\Debug\Lv02_Common.pdb
+C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Lv02_Interfaces\bin\Debug\Lv02_EntityBase.pdb
+C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Lv02_Interfaces\bin\Debug\Newtonsoft.Json.xml
+C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Lv02_Interfaces\obj\Debug\Lv02_Interfaces.csprojResolveAssemblyReference.cache
+C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Lv02_Interfaces\obj\Debug\Lv02_Interfaces.dll
+C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Lv02_Interfaces\obj\Debug\Lv02_Interfaces.pdb

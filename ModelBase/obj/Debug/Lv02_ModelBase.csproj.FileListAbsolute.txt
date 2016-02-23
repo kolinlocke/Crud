@@ -1,0 +1,17 @@
+C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Lv02_ModelBase\bin\Debug\Lv02_ModelBase.dll
+C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Lv02_ModelBase\bin\Debug\Lv02_ModelBase.pdb
+C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Lv02_ModelBase\bin\Debug\Lv02_EntityBase.dll
+C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Lv02_ModelBase\bin\Debug\Lv02_Factories.dll
+C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Lv02_ModelBase\bin\Debug\Lv02_Interfaces.dll
+C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Lv02_ModelBase\bin\Debug\Lv03_Implementation_EntityDataAccess.dll
+C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Lv02_ModelBase\bin\Debug\Lv02_EntityBase.pdb
+C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Lv02_ModelBase\bin\Debug\Lv02_Factories.pdb
+C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Lv02_ModelBase\bin\Debug\Lv02_Interfaces.pdb
+C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Lv02_ModelBase\bin\Debug\Lv03_Implementation_EntityDataAccess.pdb
+C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Lv02_ModelBase\obj\Debug\Lv02_ModelBase.csprojResolveAssemblyReference.cache
+C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Lv02_ModelBase\obj\Debug\Lv02_ModelBase.dll
+C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Lv02_ModelBase\obj\Debug\Lv02_ModelBase.pdb
+C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Lv02_ModelBase\bin\Debug\Lv02_Common.dll
+C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Lv02_ModelBase\bin\Debug\Newtonsoft.Json.dll
+C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Lv02_ModelBase\bin\Debug\Lv02_Common.pdb
+C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Lv02_ModelBase\bin\Debug\Newtonsoft.Json.xml
