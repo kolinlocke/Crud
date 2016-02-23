@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 using System.Reflection;
 using System.Text;
 
-namespace Common
+namespace _Common
 {
     public static class PropertySelector
     {

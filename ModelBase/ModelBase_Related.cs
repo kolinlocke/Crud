@@ -4,9 +4,9 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
 using System.Text;
-using EntityBase;
+using _EntityBase;
 
-namespace ModelBase
+namespace _ModelBase
 {
     #region _RelatedEntity
 
@@ -16,33 +16,45 @@ namespace ModelBase
     }
 
     public class RelatedEntity<T_RelatedEntity> : RelatedEntity
-        where T_RelatedEntity : EntityBase.EntityBase 
+        where T_RelatedEntity : EntityBase, new()
     {
         internal RelatedEntity() { }
 
-        public T_RelatedEntity pEntity { get; private set; }
+        public virtual void Setup_Entity()
+        { this.pEntity = new T_RelatedEntity(); }
+
+        public virtual T_RelatedEntity pEntity { get; protected set; }
     }
 
-    public class RelatedEntity<T_RelatedEntity, T_RelatedEntityKey> : RelatedEntity<T_RelatedEntity>
-        where T_RelatedEntity : EntityBase.EntityBase, new()
+    public class RelatedEntity<T_RelatedEntity, T_RelatedEntityKey, T_ParentEntity> : RelatedEntity<T_RelatedEntity>
+        where T_RelatedEntity : EntityBase, new()
         where T_RelatedEntityKey : RelatedEntityKey, new()
+        where T_ParentEntity : EntityBase, new()
     {
         internal RelatedEntity() { }
 
+        protected ModelBase<T_ParentEntity> mModelBase_Parent;
         protected String mRelatedEntityName = "";
         protected Expression<Func<T_RelatedEntity, Boolean>> mLoadPredicate;
-        EntityBase.EntityBase mEntity;
 
         public virtual void Setup(
-            String RelatedEntityName
+            ModelBase<T_ParentEntity> ModelBase_Parent
+            , String RelatedEntityName
             , Expression<Func<T_RelatedEntity, Boolean>> LoadPredicate)
         {
-            this.mEntity = new T_RelatedEntity();
+            this.mModelBase_Parent = ModelBase_Parent;
+            this.mRelatedEntityName = RelatedEntityName;
             this.mLoadPredicate = LoadPredicate;
+            this.Setup_Entity();
         }
 
-        public virtual void Load<T_EntityKey>(T_EntityKey EntityKey) where T_EntityKey : EntityKey
-        { }
+        public virtual void Load<T_EntityKey>(T_EntityKey EntityKey) where T_EntityKey : EntityKey, new()
+        {
+            this.pEntity = 
+                this.mModelBase_Parent
+                    .pModelDataAccess
+                    .Load_RelatedEntity<T_RelatedEntity, T_EntityKey>(EntityKey);
+        }
 
         public T_RelatedEntityKey pRelatedEntityKey
         {
@@ -55,22 +67,33 @@ namespace ModelBase
     #region _RelatedEntityDetails
 
     public class RelatedEntityDetails<T_RelatedEntity, T_RelatedEntityKey> : RelatedEntity<T_RelatedEntity, T_RelatedEntityKey>
-        where T_RelatedEntity : EntityBase.EntityBase, new()
+        where T_RelatedEntity : EntityBase, new()
         where T_RelatedEntityKey : RelatedEntityKey, new()
     {
         internal RelatedEntityDetails() { }
 
-        List<EntityBase.EntityBase> mEntityDetails;
+        List<T_RelatedEntity> mEntityDetails;
 
-        public override void Setup(string RelatedEntityName, Expression<Func<T_RelatedEntity, bool>> LoadPredicate)
+        public override void Setup(ModelBase ModelBase_Parent, string RelatedEntityName, Expression<Func<T_RelatedEntity, bool>> LoadPredicate)
         {
-            base.Setup(RelatedEntityName, LoadPredicate);
-            this.mEntityDetails = new List<EntityBase.EntityBase>();
+            base.Setup(ModelBase_Parent, RelatedEntityName, LoadPredicate);
+            this.mEntityDetails = new List<T_RelatedEntity>();
         }
 
+        public override void Setup_Entity() { }
+
         public override void Load<T_EntityKey>(T_EntityKey EntityKey)
+        { }
+
+        public List<T_RelatedEntity> pEntityDetails
         {
-            base.Load<T_EntityKey>(EntityKey);
+            get { return this.mEntityDetails; }
+        }
+
+        public override T_RelatedEntity pEntity
+        {
+            get { return null; }
+            protected set { base.pEntity = value; }
         }
     }
 
@@ -83,22 +106,75 @@ namespace ModelBase
         internal RelatedModel() { }
     }
 
-    public class RelatedModel<T_RelatedModel, T_RelatedEntityKey> : RelatedModel
+    public class RelatedModel<T_RelatedModel> : RelatedModel
+        where T_RelatedModel : ModelBase, new()
+    {
+        internal RelatedModel() { }
+
+        public virtual void Setup_Model()
+        { this.pModel = new T_RelatedModel(); }
+
+        public virtual T_RelatedModel pModel { get; protected set; }
+    }
+
+    public class RelatedModel<T_RelatedModel, T_RelatedEntityKey> : RelatedModel<T_RelatedModel>
         where T_RelatedModel : ModelBase, new()
         where T_RelatedEntityKey : RelatedEntityKey, new()
     {
         internal RelatedModel() { }
 
-        ModelBase mModel;
+        protected String mRelatedEntityName;
+        protected Expression<Func<T_RelatedModel, bool>> mLoadPredicate;
 
-        public void Setup()
+
+        public virtual void Setup(string RelatedEntityName, Expression<Func<T_RelatedModel, bool>> LoadPredicate)
         {
-            this.mModel = new T_RelatedModel();
+            this.mRelatedEntityName = RelatedEntityName;
+            this.mLoadPredicate = LoadPredicate;
+            this.Setup_Model();
+        }
+
+        public virtual void Load<T_EntityKey>(T_EntityKey EntityKey) where T_EntityKey : EntityKey
+        {
+
         }
 
         public T_RelatedEntityKey pRelatedEntityKey
         {
             get { return new T_RelatedEntityKey(); }
+        }
+    }
+
+    #endregion
+
+    #region _RelatedModelDetails
+
+    public class RelatedModelDetails<T_RelatedModel, T_RelatedEntityKey> : RelatedModel<T_RelatedModel, T_RelatedEntityKey>
+        where T_RelatedModel : ModelBase, new()
+        where T_RelatedEntityKey : RelatedEntityKey, new()
+    {
+        List<T_RelatedModel> mModels;
+
+        public override void Setup(string RelatedEntityName, Expression<Func<T_RelatedModel, bool>> LoadPredicate)
+        {
+            base.Setup(RelatedEntityName, LoadPredicate);
+            this.mModels = new List<T_RelatedModel>();
+        }
+
+        public override void Setup_Model() { }
+
+        public override void Load<T_EntityKey>(T_EntityKey EntityKey)
+        { }
+
+        public List<T_RelatedModel> pModels
+        {
+            get { return this.mModels; }
+        }
+
+        public override T_RelatedModel pModel
+        {
+            get { return null; }
+            protected set { base.pModel = value; }
         }
     }
 
@@ -121,8 +197,8 @@ namespace ModelBase
     public abstract class RelatedEntityKey { }
 
     public abstract class RelatedEntityKey<T_EntityParent, T_EntityChild> : RelatedEntityKey
-        where T_EntityParent : EntityBase.EntityBase, new()
-        where T_EntityChild : EntityBase.EntityBase, new()
+        where T_EntityParent : _EntityBase.EntityBase, new()
+        where T_EntityChild : _EntityBase.EntityBase, new()
     {
         class Relationships : List<Relationship> { }
 

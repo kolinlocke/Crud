@@ -7,3 +7,4 @@ C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\EntityBase\bin\Debug
 C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\EntityBase\bin\Debug\EntityBase.pdb
 C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\EntityBase\obj\Debug\EntityBase.dll
 C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\EntityBase\obj\Debug\EntityBase.pdb
+C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\EntityBase\obj\Debug\EntityBase.csprojResolveAssemblyReference.cache

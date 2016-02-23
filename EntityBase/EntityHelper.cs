@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
-using EntityBase.EntityAttributes;
+using _EntityBase.EntityAttributes;
 
-namespace EntityBase
+namespace _EntityBase
 {
     public static class EntityHelper
     {

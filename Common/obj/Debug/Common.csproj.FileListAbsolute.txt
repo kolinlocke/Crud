@@ -10,3 +10,4 @@ C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Common\bin\Debug\New
 C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Common\bin\Debug\Newtonsoft.Json.xml
 C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Common\obj\Debug\Common.dll
 C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Common\obj\Debug\Common.pdb
+C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache

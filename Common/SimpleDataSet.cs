@@ -8,7 +8,7 @@ using System.Runtime.Serialization;
 using System.Runtime.Serialization.Json;
 using System.ServiceModel;
 
-namespace Common
+namespace _Common
 {
 	/// <summary>
 	/// A simplified Data Set Object

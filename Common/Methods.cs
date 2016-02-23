@@ -14,7 +14,7 @@ using Newtonsoft.Json.Bson;
 using Newtonsoft.Json.Serialization;
 
 
-namespace Common
+namespace _Common
 {
     /// <summary>
     /// Common Methods used by the framework are defined here.

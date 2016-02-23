@@ -8,7 +8,7 @@
     <ProjectGuid>{73A8BFC0-09E9-482E-8BEB-19A54FADA8B3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Interfaces</RootNamespace>
+    <RootNamespace>_Interfaces</RootNamespace>
     <AssemblyName>Interfaces</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

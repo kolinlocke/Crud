@@ -4,18 +4,25 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
 using System.Text;
-using Common;
-using EntityBase;
-using Factories;
-using Interfaces;
+using _Common;
+using _EntityBase;
+using _Factories;
+using _Interfaces;
 
-namespace ModelBase
+namespace _ModelBase
 {
     [Serializable()]
     public abstract class ModelBase { }
 
     [Serializable()]
-    public abstract class ModelBase<T_Entity, T_EntityKey> : ModelBase
+    public abstract class ModelBase<T_Entity> : ModelBase
+        where T_Entity : EntityBase<T_Entity>, new()
+    {
+        public Interface_ModelDataAccess<T_Entity> pModelDataAccess { get; protected set; }
+    }
+
+    [Serializable()]
+    public abstract class ModelBase<T_Entity, T_EntityKey> : ModelBase<T_Entity>
         where T_Entity : EntityBase<T_Entity, T_EntityKey>, new()
         where T_EntityKey : EntityKey, new()
     {
@@ -27,33 +34,33 @@ namespace ModelBase
         List<RelatedModel> mRelatedModels = new List<RelatedModel>();
         Expression<Func<T_Entity, Boolean>> mLoadPredicate = null;
 
-        Interface_ModelDataAccess<T_Entity, T_EntityKey> mEda;
-
         #endregion
 
         #region _Constructor
 
+        public ModelBase()
+        { this.Setup(); }
+
         protected virtual void Setup()
-        {
-            this.Setup(null);
-        }
+        { this.Setup(null); }
 
         protected virtual void Setup(Expression<Func<T_Entity, Boolean>> LoadPredicate)
         {
             this.mEntity = Activator.CreateInstance<T_Entity>();
             this.mLoadPredicate = LoadPredicate;
 
-            this.mEda = Factory_ModelDataAccess.Create_EntityDataAccess<T_Entity, T_EntityKey>();
+            this.pModelDataAccess = Factory_ModelDataAccess.Create_EntityDataAccess<T_Entity>();
         }
 
         protected void Setup_AddRelatedEntity<T_RelatedEntity, T_RelatedEntityKey>(
             String RelatedEntityName = ""
             , Expression<Func<T_RelatedEntity, Boolean>> LoadPredicate = null)
-            where T_RelatedEntity : EntityBase.EntityBase, new()
+            where T_RelatedEntity : _EntityBase.EntityBase, new()
             where T_RelatedEntityKey : RelatedEntityKey, new()
         {
-            RelatedEntity<T_RelatedEntity, T_RelatedEntityKey> RelatedEntity = new RelatedEntity<T_RelatedEntity, T_RelatedEntityKey>();
-            RelatedEntity.Setup(RelatedEntityName, LoadPredicate);
+            RelatedEntity<T_RelatedEntity, T_RelatedEntityKey, T_Entity> RelatedEntity = 
+                new RelatedEntity<T_RelatedEntity, T_RelatedEntityKey, T_Entity>();
+            RelatedEntity.Setup(this, RelatedEntityName, LoadPredicate);
 
             this.mRelatedEntities.Add(RelatedEntity);
         }
@@ -61,11 +68,11 @@ namespace ModelBase
         protected void Setup_AddRelatedDetail<T_RelatedEntity, T_RelatedEntityKey>(
             String RelatedEntityName = ""
             , Expression<Func<T_RelatedEntity, Boolean>> LoadPredicate = null)
-            where T_RelatedEntity : EntityBase.EntityBase, new()
+            where T_RelatedEntity : _EntityBase.EntityBase, new()
             where T_RelatedEntityKey : RelatedEntityKey, new()
         {
             RelatedEntityDetails<T_RelatedEntity, T_RelatedEntityKey> RelatedEntityDetail = new RelatedEntityDetails<T_RelatedEntity, T_RelatedEntityKey>();
-            RelatedEntityDetail.Setup(RelatedEntityName, LoadPredicate);
+            RelatedEntityDetail.Setup(this, RelatedEntityName, LoadPredicate);
 
             this.mRelatedEntityDetails.Add(RelatedEntityDetail);
         }
@@ -78,7 +85,9 @@ namespace ModelBase
             Type EntityType = typeof(T_RelatedModel);
             T_RelatedModel Entity = Activator.CreateInstance<T_RelatedModel>();
 
-            RelatedModel Rm = new RelatedModel<T_RelatedModel, T_RelatedEntityKey>();
+            RelatedModel RelatedModel = new RelatedModel<T_RelatedModel, T_RelatedEntityKey>();
+            this.mRelatedModels.Add(RelatedModel);
+            
         }
 
         #endregion
@@ -92,18 +101,17 @@ namespace ModelBase
 
         public virtual void Load(T_EntityKey EntityKey)
         {
-
-            //this.mEntity = this.mEda.Load(Keys);
+            this.mEntity = this.pModelDataAccess.Load(EntityKey);
         }
 
         public virtual void Load(Expression<Func<T_Entity, bool>> LoadPredicate)
         {
-            this.mEntity = this.mEda.Load(LoadPredicate);
+            this.mEntity = this.pModelDataAccess.Load(LoadPredicate);
         }
 
         public virtual void Save()
         {
-            this.mEda.Save(this.mEntity);
+            this.pModelDataAccess.Save(this.mEntity);
         }
 
         public virtual void Delete()
@@ -120,10 +128,10 @@ namespace ModelBase
             get { return this.mEntity; }
         }
 
-        public T_RelatedEntity Get_RelatedEntity<T_RelatedEntity>() where T_RelatedEntity : EntityBase.EntityBase, new()
+        public T_RelatedEntity Get_RelatedEntity<T_RelatedEntity>() where T_RelatedEntity : _EntityBase.EntityBase, new()
         { return this.Get_RelatedEntity<T_RelatedEntity>(""); }
 
-        public T_RelatedEntity Get_RelatedEntity<T_RelatedEntity>(String EntityName) where T_RelatedEntity : EntityBase.EntityBase, new()
+        public T_RelatedEntity Get_RelatedEntity<T_RelatedEntity>(String EntityName) where T_RelatedEntity : _EntityBase.EntityBase, new()
         {
             RelatedEntity RelatedEntity = null;
             if (EntityName == "")
@@ -158,6 +166,5 @@ namespace ModelBase
         }
 
         #endregion
-
     }
 }

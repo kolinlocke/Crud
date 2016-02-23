@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using EntityBase;
-using EntityBase.EntityAttributes;
+using _EntityBase;
+using _EntityBase.EntityAttributes;
 
 namespace Implementation_Entities.Entities
 {

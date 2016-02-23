@@ -2,18 +2,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Common;
-using EntityBase;
+using _Common;
+using _EntityBase;
+using _ModelBase;
 using Implementation_Entities.Entities;
-using ModelBase;
 
 namespace Implementation_Entities.Models
 {
     public class Model_Ingredient : ModelBase<Entity_Ingredient, EntityKey_Ingredient>
     {
-        public Model_Ingredient()
+        protected override void Setup()
         {
-            this.Setup();
+            base.Setup();
 
             this.Setup_AddRelatedEntity
                 <Entity_RowProperty, RelatedEntityKey_RowProperty>
