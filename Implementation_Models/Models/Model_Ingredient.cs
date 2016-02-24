@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using _Common;
-using _EntityBase;
 using _ModelBase;
 using Implementation_Entities.Entities;
 
-namespace Implementation_Entities.Models
+namespace Implementation_Models.Models
 {
     public class Model_Ingredient : ModelBase<Entity_Ingredient, EntityKey_Ingredient>
     {

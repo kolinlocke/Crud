@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
-using Implementation_Entities.Entities;
-using Implementation_Entities.Models;
 using _EntityBase;
 using _ModelBase;
+using Implementation_Entities.Entities;
+using Implementation_Models.Models;
 
-namespace Lv01_Controllers
+namespace _Controller
 {
     public class Controller
     {
@@ -24,8 +24,10 @@ namespace Lv01_Controllers
             ////List.AsQueryable().Where(O => O.Entity.IngredientID == 1);
             //List.AsQueryable().Where(O => O.Get_RelatedEntity<Entity_RowProperty>().IsActive);
 
-            Model_Ingredient I = new Model_Ingredient();
-            I.Load(new EntityKey_Ingredient() { IngredientID = 1 });
+            Model_Ingredient Model_I = new Model_Ingredient();
+            Model_I.Load(new EntityKey_Ingredient() { IngredientID = 1 });
+
+
             //ModelHelper.ModelKeys<Model_Ingredient> Keys = new ModelHelper.ModelKeys<Model_Ingredient>();
             //Keys.Add(() => I.pEntity, 1);
 

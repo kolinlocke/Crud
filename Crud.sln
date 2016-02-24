@@ -11,7 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lv02_Factories_Interface", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lv01_Controllers", "Lv01_Controllers", "{727D3B69-CD12-448C-8087-B435BEEC5459}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lv03_Implementations", "Lv03_Implementations", "{8841A92A-04BF-4007-9BC7-3387A03365BE}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lv03_Implementations_EntityModel", "Lv03_Implementations_EntityModel", "{8841A92A-04BF-4007-9BC7-3387A03365BE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesktopUI", "DesktopUI\DesktopUI.csproj", "{930342F3-3309-4B99-A4D0-6C13AECF0113}"
 EndProject
@@ -29,7 +29,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaces", "Interfaces\In
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Implementation_Entities", "Entities\Implementation_Entities.csproj", "{694AB699-81A0-41F5-9DC9-5AC0914871C4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Implementation_SQLServer", "Implementation_SQLServer\Implementation_SQLServer.csproj", "{D9D6E4E9-B436-4B73-890E-61DF2120EBF3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Implementation_ModelDataAccess_SQLServer", "Implementation_SQLServer\Implementation_ModelDataAccess_SQLServer.csproj", "{D9D6E4E9-B436-4B73-890E-61DF2120EBF3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Implementation_Models", "Implementation_Models\Implementation_Models.csproj", "{102FF019-1D05-4BE2-86D0-DE755208D7EF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lv03_Implementation_ModelDataAccess", "Lv03_Implementation_ModelDataAccess", "{E1126308-4DA3-449C-BCB7-1F5A6C7933AD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -141,6 +145,16 @@ Global
 		{D9D6E4E9-B436-4B73-890E-61DF2120EBF3}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{D9D6E4E9-B436-4B73-890E-61DF2120EBF3}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{D9D6E4E9-B436-4B73-890E-61DF2120EBF3}.Release|x86.ActiveCfg = Release|Any CPU
+		{102FF019-1D05-4BE2-86D0-DE755208D7EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{102FF019-1D05-4BE2-86D0-DE755208D7EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{102FF019-1D05-4BE2-86D0-DE755208D7EF}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{102FF019-1D05-4BE2-86D0-DE755208D7EF}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{102FF019-1D05-4BE2-86D0-DE755208D7EF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{102FF019-1D05-4BE2-86D0-DE755208D7EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{102FF019-1D05-4BE2-86D0-DE755208D7EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{102FF019-1D05-4BE2-86D0-DE755208D7EF}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{102FF019-1D05-4BE2-86D0-DE755208D7EF}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{102FF019-1D05-4BE2-86D0-DE755208D7EF}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -154,6 +168,7 @@ Global
 		{F0C09E97-7996-4496-B102-4761DE011BCF} = {727D3B69-CD12-448C-8087-B435BEEC5459}
 		{E4F940A7-AB68-4A3D-B009-BF638C035FE2} = {727D3B69-CD12-448C-8087-B435BEEC5459}
 		{694AB699-81A0-41F5-9DC9-5AC0914871C4} = {8841A92A-04BF-4007-9BC7-3387A03365BE}
-		{D9D6E4E9-B436-4B73-890E-61DF2120EBF3} = {8841A92A-04BF-4007-9BC7-3387A03365BE}
+		{102FF019-1D05-4BE2-86D0-DE755208D7EF} = {8841A92A-04BF-4007-9BC7-3387A03365BE}
+		{D9D6E4E9-B436-4B73-890E-61DF2120EBF3} = {E1126308-4DA3-449C-BCB7-1F5A6C7933AD}
 	EndGlobalSection
 EndGlobal

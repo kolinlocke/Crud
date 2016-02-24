@@ -24,3 +24,5 @@ C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Implementation_SQLSe
 C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Implementation_SQLServer\obj\Debug\Implementation_SQLServer.csprojResolveAssemblyReference.cache
 C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Implementation_SQLServer\obj\Debug\Lv03_Implementation_SQLServer.dll
 C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Implementation_SQLServer\obj\Debug\Lv03_Implementation_SQLServer.pdb
+C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Implementation_SQLServer\bin\Debug\Entities.dll
+C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Implementation_SQLServer\bin\Debug\Entities.pdb

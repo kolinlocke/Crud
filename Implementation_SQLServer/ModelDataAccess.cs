@@ -17,9 +17,10 @@ namespace Implementation_SQLServer
             throw new NotImplementedException();
         }
 
-        public T_Entity Load<T_EntityKey>(T_EntityKey EntityKey) where T_EntityKey : EntityKey
+        public T_Entity Load<T_EntityKey>(T_EntityKey EntityKey) 
+            where T_EntityKey : EntityKey
         {
-            throw new NotImplementedException();
+            return new T_Entity();
         }
 
         public T_Entity Load(Expression<Func<T_Entity, bool>> LoadPredicate)
@@ -36,7 +37,7 @@ namespace Implementation_SQLServer
             where T_RelatedEntity : EntityBase, new()
             where T_EntityKey : EntityKey, new()
         {
-            throw new NotImplementedException();
+            return new T_RelatedEntity();
         }
     }
 }

@@ -24,3 +24,5 @@ C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Factories\bin\Debug\
 C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Factories\bin\Debug\Interfaces.pdb
 C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Factories\obj\Debug\Factories.dll
 C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Factories\obj\Debug\Factories.pdb
+C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Factories\bin\Debug\Entities.dll
+C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Factories\bin\Debug\Entities.pdb

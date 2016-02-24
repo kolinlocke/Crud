@@ -10,12 +10,16 @@ namespace _ModelBase
 {
     #region _RelatedEntity
 
-    public class RelatedEntity
+    public abstract class RelatedEntity
     {
         internal RelatedEntity() { }
+
+        public virtual void Load<T_EntityKey>(T_EntityKey EntityKey)
+            where T_EntityKey : EntityKey, new()
+        { }
     }
 
-    public class RelatedEntity<T_RelatedEntity> : RelatedEntity
+    public abstract class RelatedEntity<T_RelatedEntity> : RelatedEntity
         where T_RelatedEntity : EntityBase, new()
     {
         internal RelatedEntity() { }
@@ -29,7 +33,7 @@ namespace _ModelBase
     public class RelatedEntity<T_RelatedEntity, T_RelatedEntityKey, T_ParentEntity> : RelatedEntity<T_RelatedEntity>
         where T_RelatedEntity : EntityBase, new()
         where T_RelatedEntityKey : RelatedEntityKey, new()
-        where T_ParentEntity : EntityBase, new()
+        where T_ParentEntity : EntityBase<T_ParentEntity>, new()
     {
         internal RelatedEntity() { }
 
@@ -48,9 +52,9 @@ namespace _ModelBase
             this.Setup_Entity();
         }
 
-        public virtual void Load<T_EntityKey>(T_EntityKey EntityKey) where T_EntityKey : EntityKey, new()
+        public override void Load<T_EntityKey>(T_EntityKey EntityKey)
         {
-            this.pEntity = 
+            this.pEntity =
                 this.mModelBase_Parent
                     .pModelDataAccess
                     .Load_RelatedEntity<T_RelatedEntity, T_EntityKey>(EntityKey);
@@ -66,15 +70,16 @@ namespace _ModelBase
 
     #region _RelatedEntityDetails
 
-    public class RelatedEntityDetails<T_RelatedEntity, T_RelatedEntityKey> : RelatedEntity<T_RelatedEntity, T_RelatedEntityKey>
+    public class RelatedEntityDetails<T_RelatedEntity, T_RelatedEntityKey, T_ParentEntity> : RelatedEntity<T_RelatedEntity, T_RelatedEntityKey, T_ParentEntity>
         where T_RelatedEntity : EntityBase, new()
         where T_RelatedEntityKey : RelatedEntityKey, new()
+        where T_ParentEntity : EntityBase<T_ParentEntity>, new()
     {
         internal RelatedEntityDetails() { }
 
         List<T_RelatedEntity> mEntityDetails;
 
-        public override void Setup(ModelBase ModelBase_Parent, string RelatedEntityName, Expression<Func<T_RelatedEntity, bool>> LoadPredicate)
+        public override void Setup(ModelBase<T_ParentEntity> ModelBase_Parent, string RelatedEntityName, Expression<Func<T_RelatedEntity, bool>> LoadPredicate)
         {
             base.Setup(ModelBase_Parent, RelatedEntityName, LoadPredicate);
             this.mEntityDetails = new List<T_RelatedEntity>();

@@ -50,3 +50,5 @@ C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\DesktopUI\bin\Debug\
 C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\DesktopUI\bin\Debug\Lv03_Implementation_SQLServer.pdb
 C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\DesktopUI\obj\x86\Debug\DesktopUI.exe
 C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\DesktopUI\obj\x86\Debug\DesktopUI.pdb
+C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\DesktopUI\bin\Debug\Implementation_Models.dll
+C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\DesktopUI\bin\Debug\Implementation_Models.pdb

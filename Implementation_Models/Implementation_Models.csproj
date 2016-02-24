@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D9D6E4E9-B436-4B73-890E-61DF2120EBF3}</ProjectGuid>
+    <ProjectGuid>{102FF019-1D05-4BE2-86D0-DE755208D7EF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Lv03_Implementation_SQLServer</RootNamespace>
-    <AssemblyName>Lv03_Implementation_SQLServer</AssemblyName>
+    <RootNamespace>Implementation_Models</RootNamespace>
+    <AssemblyName>Implementation_Models</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -39,7 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ModelDataAccess.cs" />
+    <Compile Include="Models\Model_Ingredient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -47,13 +47,17 @@
       <Project>{f0c09e97-7996-4496-b102-4761de011bcf}</Project>
       <Name>Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Entities\Implementation_Entities.csproj">
+      <Project>{694ab699-81a0-41f5-9dc9-5ac0914871c4}</Project>
+      <Name>Implementation_Entities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\EntityBase\EntityBase.csproj">
       <Project>{abc76689-b5a4-49ba-bfee-9246ccc193d8}</Project>
       <Name>EntityBase</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Interfaces\Interfaces.csproj">
-      <Project>{73a8bfc0-09e9-482e-8beb-19a54fada8b3}</Project>
-      <Name>Interfaces</Name>
+    <ProjectReference Include="..\ModelBase\ModelBase.csproj">
+      <Project>{5036c4ff-60ef-455b-9826-8d0f2f1e7dee}</Project>
+      <Name>ModelBase</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

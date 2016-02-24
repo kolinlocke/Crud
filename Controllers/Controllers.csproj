@@ -56,6 +56,10 @@
       <Project>{abc76689-b5a4-49ba-bfee-9246ccc193d8}</Project>
       <Name>EntityBase</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Implementation_Models\Implementation_Models.csproj">
+      <Project>{102ff019-1d05-4be2-86d0-de755208d7ef}</Project>
+      <Name>Implementation_Models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ModelBase\ModelBase.csproj">
       <Project>{5036c4ff-60ef-455b-9826-8d0f2f1e7dee}</Project>
       <Name>ModelBase</Name>

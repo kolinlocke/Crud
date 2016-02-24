@@ -32,6 +32,7 @@ namespace _ModelBase
         List<RelatedEntity> mRelatedEntities = new List<RelatedEntity>();
         List<RelatedEntity> mRelatedEntityDetails = new List<RelatedEntity>();
         List<RelatedModel> mRelatedModels = new List<RelatedModel>();
+        List<RelatedModel> mRelatedModelDetails = new List<RelatedModel>();
         Expression<Func<T_Entity, Boolean>> mLoadPredicate = null;
 
         #endregion
@@ -71,7 +72,8 @@ namespace _ModelBase
             where T_RelatedEntity : _EntityBase.EntityBase, new()
             where T_RelatedEntityKey : RelatedEntityKey, new()
         {
-            RelatedEntityDetails<T_RelatedEntity, T_RelatedEntityKey> RelatedEntityDetail = new RelatedEntityDetails<T_RelatedEntity, T_RelatedEntityKey>();
+            RelatedEntityDetails<T_RelatedEntity, T_RelatedEntityKey, T_Entity> RelatedEntityDetail =
+                new RelatedEntityDetails<T_RelatedEntity, T_RelatedEntityKey, T_Entity>();
             RelatedEntityDetail.Setup(this, RelatedEntityName, LoadPredicate);
 
             this.mRelatedEntityDetails.Add(RelatedEntityDetail);
@@ -102,11 +104,25 @@ namespace _ModelBase
         public virtual void Load(T_EntityKey EntityKey)
         {
             this.mEntity = this.pModelDataAccess.Load(EntityKey);
+
+            this.Load_Related(EntityKey);
         }
 
         public virtual void Load(Expression<Func<T_Entity, bool>> LoadPredicate)
         {
             this.mEntity = this.pModelDataAccess.Load(LoadPredicate);
+        }
+
+        void Load_Related(T_EntityKey EntityKey)
+        { 
+            //Load RelatedEntity
+            this.Load_RelatedEntity(EntityKey);
+        }
+
+        void Load_RelatedEntity(T_EntityKey EntityKey)
+        {
+            foreach (var Item in this.mRelatedEntities)
+            { Item.Load(EntityKey); }
         }
 
         public virtual void Save()

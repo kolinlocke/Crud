@@ -32,3 +32,5 @@ C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\ModelBase\bin\Debug\
 C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\ModelBase\bin\Debug\Lv03_Implementation_SQLServer.pdb
 C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\ModelBase\obj\Debug\ModelBase.dll
 C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\ModelBase\obj\Debug\ModelBase.pdb
+C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\ModelBase\bin\Debug\Entities.dll
+C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\ModelBase\bin\Debug\Entities.pdb

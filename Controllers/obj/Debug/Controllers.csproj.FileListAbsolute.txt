@@ -40,3 +40,5 @@ C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Controllers\bin\Debu
 C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Controllers\bin\Debug\Lv03_Implementation_SQLServer.pdb
 C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Controllers\obj\Debug\Controllers.dll
 C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Controllers\obj\Debug\Controllers.pdb
+C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Controllers\bin\Debug\Implementation_Models.dll
+C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Controllers\bin\Debug\Implementation_Models.pdb
