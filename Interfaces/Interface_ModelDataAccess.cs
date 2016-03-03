@@ -16,8 +16,6 @@ namespace _Interfaces
         T_Entity Load<T_EntityKey>(T_EntityKey EntityKey)
             where T_EntityKey : EntityKey;
 
-        T_Entity Load(Expression<Func<T_Entity, bool>> LoadPredicate);
-
         void Save(T_Entity Entity);
 
         T_RelatedEntity Load_RelatedEntity<T_RelatedEntity, T_EntityKey>

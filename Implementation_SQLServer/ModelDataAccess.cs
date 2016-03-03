@@ -6,8 +6,9 @@ using System.Text;
 using _Common;
 using _EntityBase;
 using _Interfaces;
+using Implementation_Entities.Entities;
 
-namespace Implementation_SQLServer
+namespace Implementation_ModelDataAccess_SQLServer
 {
     public class ModelDataAccess<T_Entity> : Interface_ModelDataAccess<T_Entity>
         where T_Entity : EntityBase<T_Entity>, new()
@@ -21,11 +22,6 @@ namespace Implementation_SQLServer
             where T_EntityKey : EntityKey
         {
             return new T_Entity();
-        }
-
-        public T_Entity Load(Expression<Func<T_Entity, bool>> LoadPredicate)
-        {
-            throw new NotImplementedException();
         }
 
         public void Save(T_Entity Entity)

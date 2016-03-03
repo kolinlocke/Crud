@@ -98,25 +98,32 @@ namespace _ModelBase
 
         public virtual void New()
         {
+            this.mEntity = new T_Entity();
+            
+        }
 
+        void New_Related()
+        {
+            foreach (var Item in this.mRelatedEntities)
+            { Item.New(); }
         }
 
         public virtual void Load(T_EntityKey EntityKey)
         {
             this.mEntity = this.pModelDataAccess.Load(EntityKey);
-
             this.Load_Related(EntityKey);
-        }
-
-        public virtual void Load(Expression<Func<T_Entity, bool>> LoadPredicate)
-        {
-            this.mEntity = this.pModelDataAccess.Load(LoadPredicate);
         }
 
         void Load_Related(T_EntityKey EntityKey)
         { 
             //Load RelatedEntity
             this.Load_RelatedEntity(EntityKey);
+
+            //Load RelatedEntityDetails Goes Here
+
+            //Load RelatedModel Goes Here
+
+            //Load RelatedModelDetails Goes Here
         }
 
         void Load_RelatedEntity(T_EntityKey EntityKey)

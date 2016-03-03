@@ -5,7 +5,7 @@ using System.Text;
 using _Interfaces;
 using Implementation_Entities.Entities;
 
-namespace Implementation_SQLServer
+namespace Implementation_ModelDataAccess_SQLServer
 {
     public class ModelDataAccess_Ingredient : Interface_ModelDataAccess<Entity_Ingredient>
     {

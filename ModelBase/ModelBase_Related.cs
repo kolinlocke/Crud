@@ -14,9 +14,10 @@ namespace _ModelBase
     {
         internal RelatedEntity() { }
 
+        public virtual void New() { }
+
         public virtual void Load<T_EntityKey>(T_EntityKey EntityKey)
-            where T_EntityKey : EntityKey, new()
-        { }
+            where T_EntityKey : EntityKey, new() { }
     }
 
     public abstract class RelatedEntity<T_RelatedEntity> : RelatedEntity
@@ -52,6 +53,9 @@ namespace _ModelBase
             this.Setup_Entity();
         }
 
+        public override void New()
+        { this.pEntity = new T_RelatedEntity(); }
+
         public override void Load<T_EntityKey>(T_EntityKey EntityKey)
         {
             this.pEntity =
@@ -77,8 +81,6 @@ namespace _ModelBase
     {
         internal RelatedEntityDetails() { }
 
-        List<T_RelatedEntity> mEntityDetails;
-
         public override void Setup(ModelBase<T_ParentEntity> ModelBase_Parent, string RelatedEntityName, Expression<Func<T_RelatedEntity, bool>> LoadPredicate)
         {
             base.Setup(ModelBase_Parent, RelatedEntityName, LoadPredicate);
@@ -87,12 +89,16 @@ namespace _ModelBase
 
         public override void Setup_Entity() { }
 
+        public override void New()
+        { this.pEntityDetails = new List<T_RelatedEntity>(); }
+
         public override void Load<T_EntityKey>(T_EntityKey EntityKey)
         { }
 
         public List<T_RelatedEntity> pEntityDetails
         {
-            get { return this.mEntityDetails; }
+            get;
+            protected set;
         }
 
         public override T_RelatedEntity pEntity
@@ -109,6 +115,11 @@ namespace _ModelBase
     public class RelatedModel
     {
         internal RelatedModel() { }
+
+        public virtual void New() { }
+
+        public virtual void Load<T_EntityKey>(T_EntityKey EntityKey) 
+            where T_EntityKey : EntityKey { }
     }
 
     public class RelatedModel<T_RelatedModel> : RelatedModel
@@ -131,7 +142,6 @@ namespace _ModelBase
         protected String mRelatedEntityName;
         protected Expression<Func<T_RelatedModel, bool>> mLoadPredicate;
 
-
         public virtual void Setup(string RelatedEntityName, Expression<Func<T_RelatedModel, bool>> LoadPredicate)
         {
             this.mRelatedEntityName = RelatedEntityName;
@@ -139,10 +149,11 @@ namespace _ModelBase
             this.Setup_Model();
         }
 
-        public virtual void Load<T_EntityKey>(T_EntityKey EntityKey) where T_EntityKey : EntityKey
-        {
+        public override void New()
+        { this.pModel = new T_RelatedModel(); }
 
-        }
+        public override void Load<T_EntityKey>(T_EntityKey EntityKey)
+        { }
 
         public T_RelatedEntityKey pRelatedEntityKey
         {
@@ -158,22 +169,24 @@ namespace _ModelBase
         where T_RelatedModel : ModelBase, new()
         where T_RelatedEntityKey : RelatedEntityKey, new()
     {
-        List<T_RelatedModel> mModels;
-
         public override void Setup(string RelatedEntityName, Expression<Func<T_RelatedModel, bool>> LoadPredicate)
         {
             base.Setup(RelatedEntityName, LoadPredicate);
-            this.mModels = new List<T_RelatedModel>();
+            this.pModels = new List<T_RelatedModel>();
         }
 
         public override void Setup_Model() { }
+
+        public override void New()
+        { this.pModels = new List<T_RelatedModel>(); }
 
         public override void Load<T_EntityKey>(T_EntityKey EntityKey)
         { }
 
         public List<T_RelatedModel> pModels
         {
-            get { return this.mModels; }
+            get;
+            protected set;
         }
 
         public override T_RelatedModel pModel
