@@ -104,8 +104,10 @@ namespace _ModelBase
 
         void New_Related()
         {
-            foreach (var Item in this.mRelatedEntities)
-            { Item.New(); }
+            this.mRelatedEntities.ForEach(O => { O.New(); });
+            this.mRelatedEntityDetails.ForEach(O => { O.New(); });
+            this.mRelatedModels.ForEach(O => { O.New(); });
+            this.mRelatedModelDetails.ForEach(O => { O.New(); });
         }
 
         public virtual void Load(T_EntityKey EntityKey)
@@ -116,14 +118,10 @@ namespace _ModelBase
 
         void Load_Related(T_EntityKey EntityKey)
         { 
-            //Load RelatedEntity
-            this.Load_RelatedEntity(EntityKey);
-
-            //Load RelatedEntityDetails Goes Here
-
-            //Load RelatedModel Goes Here
-
-            //Load RelatedModelDetails Goes Here
+            this.mRelatedEntities.ForEach(O => { O.Load(EntityKey); });
+            this.mRelatedEntityDetails.ForEach(O => { O.Load(EntityKey); });
+            this.mRelatedModels.ForEach(O => { O.Load(EntityKey); });
+            this.mRelatedModelDetails.ForEach(O => { O.Load(EntityKey); });            
         }
 
         void Load_RelatedEntity(T_EntityKey EntityKey)
