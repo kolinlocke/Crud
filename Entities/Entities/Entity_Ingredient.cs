@@ -5,7 +5,7 @@ using System.Text;
 using _EntityBase;
 using _EntityBase.EntityAttributes;
 
-namespace Implementation_Entities.Entities
+namespace _Implementation_Entities.Entities
 {
     [Entity(EntityName = "Ingredient")]
     public class Entity_Ingredient : EntityBase<Entity_Ingredient, EntityKey_Ingredient>

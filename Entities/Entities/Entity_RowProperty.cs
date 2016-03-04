@@ -5,7 +5,7 @@ using System.Text;
 using _EntityBase;
 using _EntityBase.EntityAttributes;
 
-namespace Implementation_Entities.Entities
+namespace _Implementation_Entities.Entities
 {
     [Entity(EntityName = "RowProperty")]
     public class Entity_RowProperty : EntityBase<Entity_RowProperty, EntityKey_RowProperty>

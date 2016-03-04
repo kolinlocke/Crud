@@ -5,8 +5,8 @@ using System.Linq;
 using System.Text;
 using _EntityBase;
 using _ModelBase;
-using Implementation_Entities.Entities;
-using Implementation_Models.Models;
+using _Implementation_Entities.Entities;
+using _Implementation_Models.Models;
 
 namespace _Controller
 {

@@ -25,5 +25,5 @@ namespace _EntityBase
     }
 
     [Serializable()]
-    public abstract class EntityKey { }
+    public abstract class EntityKey : EntityBase { }
 }

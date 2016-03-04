@@ -7,7 +7,7 @@
     <ProjectGuid>{102FF019-1D05-4BE2-86D0-DE755208D7EF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Implementation_Models</RootNamespace>
+    <RootNamespace>_Implementation_Models</RootNamespace>
     <AssemblyName>Implementation_Models</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

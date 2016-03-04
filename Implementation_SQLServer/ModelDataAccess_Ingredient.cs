@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using _Interfaces;
-using Implementation_Entities.Entities;
+using _Implementation_Entities.Entities;
 
 namespace Implementation_ModelDataAccess_SQLServer
 {

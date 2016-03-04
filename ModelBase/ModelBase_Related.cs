@@ -84,7 +84,7 @@ namespace _ModelBase
         public override void Setup(ModelBase<T_ParentEntity> ModelBase_Parent, string RelatedEntityName, Expression<Func<T_RelatedEntity, bool>> LoadPredicate)
         {
             base.Setup(ModelBase_Parent, RelatedEntityName, LoadPredicate);
-            this.mEntityDetails = new List<T_RelatedEntity>();
+            this.pEntityDetails = new List<T_RelatedEntity>();
         }
 
         public override void Setup_Entity() { }

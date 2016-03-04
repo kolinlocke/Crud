@@ -6,7 +6,7 @@ using System.Text;
 using _Common;
 using _EntityBase;
 using _Interfaces;
-using Implementation_Entities.Entities;
+using _Implementation_Entities.Entities;
 
 namespace Implementation_ModelDataAccess_SQLServer
 {
@@ -21,6 +21,18 @@ namespace Implementation_ModelDataAccess_SQLServer
         public T_Entity Load<T_EntityKey>(T_EntityKey EntityKey) 
             where T_EntityKey : EntityKey
         {
+            //Get EntityName
+            var EntityName = EntityHelper.Get_EntityName<T_Entity>();
+
+            //Get Entity Fields
+            var EntityFields = EntityHelper.Get_EntityFields<T_Entity>();
+
+            //Get EntityKey Fields
+            var EntityKeyFields = EntityHelper.Get_EntityFields<T_EntityKey>();
+
+
+
+
             return new T_Entity();
         }
 

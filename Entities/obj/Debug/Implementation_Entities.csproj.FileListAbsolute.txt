@@ -1,5 +1,5 @@
-C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Entities\bin\Debug\Entities.dll
-C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Entities\bin\Debug\Entities.pdb
+C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Entities\bin\Debug\Implementation_Entities.dll
+C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Entities\bin\Debug\Implementation_Entities.pdb
 C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Entities\bin\Debug\Common.dll
 C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Entities\bin\Debug\EntityBase.dll
 C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Entities\bin\Debug\Newtonsoft.Json.dll
@@ -7,5 +7,5 @@ C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Entities\bin\Debug\C
 C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Entities\bin\Debug\EntityBase.pdb
 C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Entities\bin\Debug\Newtonsoft.Json.xml
 C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Entities\obj\Debug\Implementation_Entities.csprojResolveAssemblyReference.cache
-C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Entities\obj\Debug\Entities.dll
-C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Entities\obj\Debug\Entities.pdb
+C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Entities\obj\Debug\Implementation_Entities.dll
+C:\Users\janerad\Documents\Visual Studio 2010\Projects\Crud\Entities\obj\Debug\Implementation_Entities.pdb

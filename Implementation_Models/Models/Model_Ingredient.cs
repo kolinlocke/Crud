@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using _Common;
 using _ModelBase;
-using Implementation_Entities.Entities;
+using _Implementation_Entities.Entities;
 
-namespace Implementation_Models.Models
+namespace _Implementation_Models.Models
 {
     public class Model_Ingredient : ModelBase<Entity_Ingredient, EntityKey_Ingredient>
     {

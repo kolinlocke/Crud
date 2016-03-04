@@ -7,8 +7,8 @@
     <ProjectGuid>{D9D6E4E9-B436-4B73-890E-61DF2120EBF3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Lv03_Implementation_SQLServer</RootNamespace>
-    <AssemblyName>Lv03_Implementation_SQLServer</AssemblyName>
+    <RootNamespace>_Implementation_ModelDataAccess_SQLServer</RootNamespace>
+    <AssemblyName>Implementation_ModelDataAccess_SQLServer</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,6 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -42,6 +43,7 @@
     <Compile Include="ModelDataAccess.cs" />
     <Compile Include="ModelDataAccess_Ingredient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueryMethods.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">

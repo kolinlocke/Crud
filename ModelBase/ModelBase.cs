@@ -99,7 +99,7 @@ namespace _ModelBase
         public virtual void New()
         {
             this.mEntity = new T_Entity();
-            
+            this.New_Related();
         }
 
         void New_Related()
@@ -122,12 +122,6 @@ namespace _ModelBase
             this.mRelatedEntityDetails.ForEach(O => { O.Load(EntityKey); });
             this.mRelatedModels.ForEach(O => { O.Load(EntityKey); });
             this.mRelatedModelDetails.ForEach(O => { O.Load(EntityKey); });            
-        }
-
-        void Load_RelatedEntity(T_EntityKey EntityKey)
-        {
-            foreach (var Item in this.mRelatedEntities)
-            { Item.Load(EntityKey); }
         }
 
         public virtual void Save()
