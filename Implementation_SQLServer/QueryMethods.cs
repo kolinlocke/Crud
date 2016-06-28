@@ -1,22 +1,52 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using _EntityBase;
 
-namespace Lv03_Implementation_SQLServer
+namespace _Implementation_SQLServer
 {
     internal class QueryMethods
     {
+        #region _DataStructs
+
+        public class QueryCondition : List<QueryCondition_Item>
+        {
+
+            
+        }
+
+        public class QueryCondition_Item
+        {
+            public String FieldName { get; set; }
+            public Object FieldValue { get; set; }
+        }
+
+        #endregion
+
         #region _Methods
 
         public static List<T_Entity> GetEntities<T_Entity>(String QueryCondition) 
             where T_Entity : EntityBase
         {
+            SqlConnection Cn = new SqlConnection(pDataConnection.pConnectionString);
+
+            String Query = "";
 
 
+            return null;
+        }
+
+        public static List<T_Entity> GetEntities<T_Entity>(Expression<Func<T_Entity, Boolean>> LoadPredicate = null)
+            where T_Entity : EntityBase
+        {
+            SqlConnection Cn = new SqlConnection(pDataConnection.pConnectionString);
+            SqlCommand Cmd = new SqlCommand() { Connection = Cn };
+
+            //LoadPredicate.Body
 
 
             return null;
@@ -48,6 +78,5 @@ namespace Lv03_Implementation_SQLServer
         }
 
         #endregion
-
     }
 }
